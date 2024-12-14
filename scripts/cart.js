@@ -1,4 +1,4 @@
-let cart = [];
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 function addToCart(productId) {
   const product = products.find(p => p.id === productId);
@@ -10,17 +10,20 @@ function addToCart(productId) {
     cart.push({ ...product, quantity: 1 });
   }
 
+  localStorage.setItem('cart', JSON.stringify(cart)); 
   updateCart();
 }
 
 function removeFromCart(productId) {
   cart = cart.filter(item => item.id !== productId);
+  localStorage.setItem('cart', JSON.stringify(cart)); 
   updateCart();
 }
 
 function updateCart() {
   const cartItems = document.getElementById("cart-items");
   const totalPrice = document.getElementById("total-price");
+  const cartBadge = document.getElementById("cart-badge");
 
   cartItems.innerHTML = "";
   let total = 0;
@@ -38,4 +41,11 @@ function updateCart() {
   });
 
   totalPrice.textContent = `Total: $${total.toFixed(2)}`;
+  cartBadge.textContent = cart.length; 
 }
+
+updateCart(); 
+
+document.getElementById("checkout-button").addEventListener("click", () => {
+  alert("Checkout process initiated! (This feature is a placeholder.)");
+});

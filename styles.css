@@ -15,14 +15,21 @@ header nav {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: #007bff;
-  color: white;
+  background-color: #1D1E22;
+  color: #FF1B2A;
+}
+
+header nav h1 {
+  font-size: 1.5rem;
 }
 
 header nav input {
   padding: 8px;
   border: none;
   border-radius: 5px;
+  width: 200px;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 main {
@@ -35,6 +42,14 @@ main {
 @media (max-width: 768px) {
   main {
     grid-template-columns: 1fr;
+  }
+
+  header nav h1 {
+    font-size: 1.2rem;
+  }
+
+  header nav input {
+    width: 100%;
   }
 }
 
@@ -51,11 +66,17 @@ main {
   text-align: center;
   padding: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
 }
 
 .product-card img {
   width: 100%;
   height: auto;
+  border-radius: 5px;
 }
 
 .product-card h3 {
@@ -65,7 +86,7 @@ main {
 
 .product-card p {
   margin-bottom: 10px;
-  color: #888;
+  color: #FF1B2A;
 }
 
 #shopping-cart {
@@ -90,13 +111,40 @@ main {
 #checkout-button {
   width: 100%;
   padding: 10px;
-  background-color: #28a745;
+  background-color: #FF1B2A;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 1rem;
 }
 
 #checkout-button:hover {
-  background-color: #218838;
+  background-color: #FF1B2A;
+}
+
+
+@media (max-width: 480px) {
+  .product-card {
+    padding: 15px;
+  }
+
+  .product-card h3 {
+    font-size: 16px;
+  }
+
+  #checkout-button {
+    font-size: 0.9rem;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 320px) {
+  main {
+    padding: 10px;
+  }
+
+  #shopping-cart {
+    padding: 15px;
+  }
 }

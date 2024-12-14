@@ -22,10 +22,11 @@ const products = [
   }
 ];
 
-function renderProducts() {
+function renderProducts(productsList) {
   const productList = document.getElementById("product-list");
+  productList.innerHTML = ''; 
 
-  products.forEach(product => {
+  productsList.forEach(product => {
     const productCard = document.createElement("div");
     productCard.classList.add("product-card");
 
@@ -40,4 +41,16 @@ function renderProducts() {
   });
 }
 
-renderProducts();
+renderProducts(products);
+
+
+function sortProducts(criteria) {
+  const sortedProducts = [...products].sort((a, b) => {
+    if (criteria === 'name') {
+      return a.name.localeCompare(b.name);
+    } else if (criteria === 'price') {
+      return a.price - b.price;
+    }
+  });
+  renderProducts(sortedProducts);
+}
