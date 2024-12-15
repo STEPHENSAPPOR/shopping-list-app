@@ -47,5 +47,5 @@ function updateCart() {
 updateCart(); 
 
 document.getElementById("checkout-button").addEventListener("click", () => {
-  alert("Checkout process initiated! (This feature is a placeholder.)");
+  alert("Checkout process initiated!");
 });

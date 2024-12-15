@@ -26,7 +26,7 @@ header nav h1 {
 header nav input {
   padding: 8px;
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
   width: 200px;
   max-width: 100%;
   box-sizing: border-box;
@@ -44,8 +44,15 @@ main {
     grid-template-columns: 1fr;
   }
 
+  header nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
   header nav h1 {
     font-size: 1.2rem;
+    margin-bottom: 10px;
   }
 
   header nav input {
@@ -53,10 +60,23 @@ main {
   }
 }
 
+
 #product-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+}
+
+@media (max-width: 768px) {
+  #product-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  #product-list {
+    grid-template-columns: 1fr;
+  }
 }
 
 .product-card {
@@ -89,6 +109,21 @@ main {
   color: #FF1B2A;
 }
 
+.product-card button {
+  background-color: #1D1E22;
+  color: white;
+  border: none;
+  border-radius: px;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.product-card button:hover {
+  background-color: #FF1B2A; 
+}
+
+
 #shopping-cart {
   background-color: white;
   padding: 20px;
@@ -120,9 +155,8 @@ main {
 }
 
 #checkout-button:hover {
-  background-color: #FF1B2A;
+  background-color: #1D1E22;
 }
-
 
 @media (max-width: 480px) {
   .product-card {
