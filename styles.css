@@ -17,6 +17,11 @@ header nav {
   padding: 20px;
   background-color: #1D1E22;
   color: #FF1B2A;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
 
 header nav h1 {
@@ -37,6 +42,7 @@ main {
   grid-template-columns: 3fr 1fr;
   gap: 20px;
   padding: 20px;
+  margin-top: 120px;
 }
 
 @media (max-width: 768px) {
@@ -58,7 +64,12 @@ main {
   header nav input {
     width: 100%;
   }
+
+  main {
+    margin-top: 140px;
+  }
 }
+
 
 
 #product-list {
